@@ -1,0 +1,17 @@
+---
+applications:
+- name: elipo_backend
+  random-route: true
+  path: ./
+  buildpack: python_buildpack
+  command: python app.py
+  services:
+  - pyHana
+  processes:
+  - type: web
+  instances: 1
+  memory: 1500M
+  disk_quota: 1500M
+  health-check-type: process
+  health-check-http-endpoint: ''
+  
